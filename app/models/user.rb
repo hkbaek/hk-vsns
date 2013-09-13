@@ -10,4 +10,12 @@
 #
 
 class User < ActiveRecord::Base
+  before_save { self.email = email.downcase }
+
+  validates :email, presence: true
+  validates :email, uniqueness: { case_sensitive: false }
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }
+
+  has_secure_password
+  validates :password, length: { minimum: 6 }
 end
