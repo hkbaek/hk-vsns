@@ -9,6 +9,7 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.14.0'
+  gem 'pry-rails', :group => :development
 end
 
 group :test do
@@ -55,3 +56,5 @@ gem 'bcrypt-ruby', '3.0.0'
 # gem 'debugger', group: [:development, :test]
 
 gem 'annotate', '2.5.0', group: [:development]
+
+gem 'pry-rails', :group => :development
